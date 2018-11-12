@@ -10,6 +10,13 @@
 
 # production
 /build
+# firebase config
+/firebase
+.firebase
+.firebaserc
+
+#git ignore
+.gitignore
 
 # misc
 .DS_Store
