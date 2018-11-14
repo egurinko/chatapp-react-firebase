@@ -21,7 +21,7 @@ This realtime chatapp provides two features,
 1. Realtime group chat.
 
    - Once you send a message, everyone in that chat can see the post with your immediately.
-     ![Realtime app demo](https://user-images.githubusercontent.com/23233648/48454880-6cec4b00-e7fc-11e8-82a1-026b45966eca.gif)
+     ![Realtime app demo](https://user-images.githubusercontent.com/23233648/48456613-f0a93600-e802-11e8-95eb-f17800e26809.gif)
 
 2. Google Authentication
    - Only people who pass the google authntication posts message.
