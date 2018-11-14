@@ -18,12 +18,15 @@ This was created during my time as a student at Code Chrysalis! The repository p
 
 This realtime chatapp provides two features,
 
-1. Realtime group chat.
+1. Realtime group chatting.
 
-   - Once you send a message, everyone in that chat can see the post with your immediately.
+   - You can send a message and file.
+   - Once you send a message, everyone in the chat can see the post immediately.
      ![Realtime app demo](https://user-images.githubusercontent.com/23233648/48456988-619d1d80-e804-11e8-90ec-debc52705acd.gif)
 
-2. Google Authentication
+2. Chat History
+
+3. Google Authentication
    - Only people who pass the google authntication posts message.
 
 ## Demo
@@ -44,6 +47,8 @@ Because this repo is based on Firebase, please make firebase project.
    ![Google Sign-in](https://user-images.githubusercontent.com/23233648/48454818-2eef2700-e7fc-11e8-948c-63ac94619f77.png)
 4. Enable RealTimeDB and change security rules to "Starting in test mode"
    ![Enable RealTimeDB](https://user-images.githubusercontent.com/23233648/48454954-b9d02180-e7fc-11e8-90e9-030f07eb15e4.png)
+
+5. Enable Cloud Storage.
 
 ### Setup your Code
 
@@ -91,8 +96,11 @@ firebase deploy
 
 ## How it works
 
-- Frontend <br>create-react-app, Material-UI
-- Database <br>Firebase realtime database
+- Frontend <br>React (create-react-app)
+- Design <br>Material-UI
+- Deployment <br>Firebase Hosting
+- No-SQL <br>Firebase realtime database
+- Object-Storage <br>Firebase Cloud Storage
 - Authentication <br>Firebase Authentication
 
 ## Links

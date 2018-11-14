@@ -4,7 +4,7 @@ import ChatHistory from "./components/ChatHistory";
 import Navbar from "./components/Navbar";
 import "./css/App.css";
 
-import { firebaseDb, firebaseAuth } from "./firebase";
+import { firebaseDb, firebaseAuth, cloudStorage } from "./firebase";
 
 const dbRef = firebaseDb.ref("/posts");
 
@@ -36,21 +36,21 @@ class App extends Component {
   setUser = user => {
     if (user) {
       this.setState({
-        isSignIn: !this.state.isSignIn,
+        isSignIn: true,
         user: user,
         user_id: user.uid,
         photo: user.photoURL,
         username: user.displayName
       });
-    } else {
-      this.setState({
-        isSignIn: !this.state.isSignIn,
-        user_id: undefined,
-        user: undefined,
-        photo: undefined,
-        username: undefined
-      });
+      return;
     }
+    this.setState({
+      isSignIn: false,
+      user: undefined,
+      user_id: undefined,
+      photo: undefined,
+      username: undefined
+    });
   };
   render() {
     return (
@@ -73,6 +73,7 @@ class App extends Component {
                 senderPhoto={chat.photo}
                 senderUsername={chat.username}
                 photo={this.state.photo}
+                postedPhotoUrl={chat.postedPhotoUrl}
               />
             );
           })
