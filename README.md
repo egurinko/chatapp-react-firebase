@@ -1,44 +1,103 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ChatApp-React-Firebase
 
-## Available Scripts
+This was created during my time as a student at Code Chrysalis! The repository provides Realtime Group Chating system based on react and firebase.
 
-In the project directory, you can run:
+## Table of content
 
-### `npm start`
+- [ChatApp-React-Firebase](#chatapp-react-firebase)
+  - [Table of content](#table-of-content)
+  - [Features](#features)
+  - [Demo](#demo)
+  - [Setup](#setup)
+    - [Making project in Firebase](#making-project-in-firebase)
+    - [Setup your Code](#setup-your-code)
+  - [How it works](#how-it-works)
+  - [Links](#links)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This realtime chatapp provides two features,
 
-### `npm test`
+1. Realtime group chat.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Once you send a message, everyone in that chat can see the post with your immediately.
+     ![Realtime app demo](https://user-images.githubusercontent.com/23233648/48454880-6cec4b00-e7fc-11e8-82a1-026b45966eca.gif)
 
-### `npm run build`
+2. Google Authentication
+   - Only people who pass the google authntication posts message.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+[Demo Page](https://chatapp-react-firebase-3f486.firebaseapp.com/) is here! You can try with your google account.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `npm run eject`
+### Making project in Firebase
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Because this repo is based on Firebase, please make firebase project.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Go to [Firebase Console](https://console.firebase.google.com/u/0/) .
+2. Click Add project, then select or enter a Project name. ...
+3. Enable Google Sign-in for google authentication
+   ![Google Sign-in](https://user-images.githubusercontent.com/23233648/48454818-2eef2700-e7fc-11e8-948c-63ac94619f77.png)
+4. Enable RealTimeDB and change security rules to "Starting in test mode"
+   ![Enable RealTimeDB](https://user-images.githubusercontent.com/23233648/48454954-b9d02180-e7fc-11e8-90e9-030f07eb15e4.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Setup your Code
 
-## Learn More
+You need to clone this repo and make some configs.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone this repo.
+2. Install dependencies and firebase command.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+cd <directory name>
+yarn
+yarn global add firebase-tools
+```
+
+3. Login firebase and associate your app and the firebase project. Choose your project name. alias can be anything.
+
+```
+firebase login
+firebase use --add
+```
+
+4. Make .env file in root directory for setting configuration of firebase. You can get all information in firebase console. Go to the console and press </> mark above "Add an app to get started"
+
+```
+REACT_APP_API_KEY=<apiKey>
+REACT_APP_AUTH_DOMAIN=<authDomain>
+REACT_APP_DATABASE_URL=<databaseURL>
+REACT_APP_PROJECT_ID=<projectId>
+REACT_APP_STORAGE_BUCKET=<storageBucket>
+REACT_APP_MESSAGING_SENDER_ID=<messagingSenderId>
+```
+
+5. Try it on local. Please play with it. If you post something, you can check the database on console. You can see your message.
+
+```
+yarn build
+firebase use --add
+```
+
+6. You can deploy if you want on firebase hosting service.
+
+```
+firebase deploy
+```
+
+## How it works
+
+- Frontend <br>create-react-app, Material-UI
+- Database <br>Firebase realtime database
+- Authentication <br>Firebase Authentication
+
+## Links
+
+- [Firebase](https://firebase.google.com/?hl=en)
+- [create-react-app](https://github.com/facebook/create-react-app)
+- [Material-UI](https://v0.material-ui.com/#/)
+- [Source code](https://github.com/egurinko/chatapp-react-firebase)
